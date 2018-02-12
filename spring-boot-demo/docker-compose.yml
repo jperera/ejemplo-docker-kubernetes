@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports: 
+      - 9090:8080
+    networks:
+      - my-net
+  redis:      
+    image: redis
+    container_name: my-redis
+    networks:
+      - my-net
+networks:
+  my-net:
